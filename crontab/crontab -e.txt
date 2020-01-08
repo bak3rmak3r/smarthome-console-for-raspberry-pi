@@ -1,0 +1,14 @@
+#default: start openhab2 dashboard
+@reboot sleep 30 && sh /opt/automation/web/start_smarthome.sh &
+
+#check button high through button push
+@reboot sleep 30 && python /opt/automation/button/button1.py &
+@reboot sleep 30 && python /opt/automation/button/button2.py &
+@reboot sleep 30 && python /opt/automation/button/button3.py &
+
+#check if person in front of dashboard to switch on display through relay
+@reboot sleep 60 && python /opt/automation/ir/scan_ir.py &
+
+#set output display for user session
+*/2 * * * * pi DISPLAY=:0 xset s off; DISPLAY=:0  xset -dpms
+0 2 * * * root /sbin/shutdown -r now
