@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#ir scan to check person presence and switch on display through relais
 
 import time
 import RPi.GPIO as GPIO
