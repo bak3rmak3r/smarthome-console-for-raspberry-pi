@@ -7,11 +7,14 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-
 #warten fuer Reboot
 time.sleep(5)
 
+
+#set stream startet after first button press
+#set auto played stream on boot through crontab adjustment
 x = 1
+
 while True:
         i = GPIO.input(3)
         print i
