@@ -10,6 +10,7 @@ GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 #warten fuer Reboot
 time.sleep(5)
 
+
 while True:
         i = GPIO.input(24)
 
