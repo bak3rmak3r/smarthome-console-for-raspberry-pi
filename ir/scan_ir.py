@@ -16,7 +16,7 @@ while True:
         	print 'TFT an'
 		x = 0
 
-		#adjust seconds for switch of delay
+		#adjust seconds for switch off delay
 		while x < 10:
 			i = GPIO.input(12)
             		if i == 1:
